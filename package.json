@@ -1,5 +1,4 @@
 {
-  "homepage": "http://acedeywin.github.io/react-app",
   "name": "react-cc",
   "version": "0.1.0",
   "private": true,
@@ -25,8 +24,6 @@
     "tailwindcss": "^1.7.6"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build:css": "postcss src/index.css -o src/tailwind.css",
     "watch:css": "postcss src/index.css -o src/tailwind.css -w",
     "start": "yarn build:css && react-scripts start",

@@ -28,7 +28,8 @@ function Home() {
 
   return (
     <div>
-      <h1 className="font-bold text-2xl">Best Sellers</h1>
+      <h1 className="font-bold text-2xl text-center">Best Sellers</h1>
+      <br />
       {content}
     </div>
   );

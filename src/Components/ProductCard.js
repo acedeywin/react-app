@@ -1,30 +1,62 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {
+  Card,
+  CardImg,
+  CardBody,
+  CardTitle,
+  CardText,
+  Button,
+} from "reactstrap";
 
 function ProductCard(props) {
   return (
-    <div className="border mb-4 rounded overflow-hidden">
-      <Link to={`/products/${props.product.id}`}>
-        <div
-          style={{ backgroundImage: `url('${props.product.images}')` }}
-          className="w-full h-64 bg-blue bg-cover"
-        ></div>
-      </Link>
-      <div className="p-3">
-        <h3 className="font-bold text-xl mb-3">
-          <Link to={`/products/${props.product.id}`}>{props.product.name}</Link>
-        </h3>
-        <div className="font-bold mb-3">{props.product.price}</div>
-        <div className="mb-3">{props.product.description}</div>
-        <Link
-          to={`/products/${props.product.id}`}
-          className="bg-blue-500 text-white p-2 fles justify-center"
-        >
-          View
-        </Link>
+    <div className="container">
+      <div className="row row-content">
+        <div className="col-12 col-md-3"></div>
+        <div className="col-12 col-md-6">
+          <Card>
+            <Link to={`/products/${props.product.id}`}>
+              <CardImg
+                style={{ backgroundImage: `url('${props.product.images}')` }}
+                className="w-full h-64 bg-blue bg-cover"
+              />
+            </Link>
+
+            <CardBody>
+              <CardTitle className="font-bold text-xl mb-3">
+                <Link to={`/products/${props.product.id}`}>
+                  {props.product.name}
+                </Link>
+              </CardTitle>
+              <CardText className="font-bold mb-3">
+                {props.product.price}
+              </CardText>
+              <CardText className="mb-3">{props.product.description}</CardText>
+              <Link to={`/products/${props.product.id}`}>
+                <Button type="submit" color="primary">
+                  View
+                </Button>
+              </Link>
+            </CardBody>
+          </Card>
+        </div>
+        <div className="col-12 col-md-3"></div>
       </div>
     </div>
   );
 }
 
 export default ProductCard;
+
+{
+  /* <div>
+  <Card>
+    <CardImg width="100%" src={dish.image} alt={dish.name} />
+    <CardBody>
+      <CardTitle>{dish.name}</CardTitle>
+      <CardText>{dish.description}</CardText>
+    </CardBody>
+  </Card>
+</div>; */
+}

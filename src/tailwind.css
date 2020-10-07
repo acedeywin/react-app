@@ -18664,6 +18664,11 @@ video {
   animation: spin 2s linear infinite;
 }
 
+.home {
+  margin-left: 40px;
+  color: #3498db;
+}
+
 /* Safari */
 
 @keyframes spin {
@@ -90871,5 +90876,3 @@ video {
     animation: bounce 1s infinite;
   }
 }
-
-/* My custom css */

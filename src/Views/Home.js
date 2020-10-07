@@ -11,7 +11,11 @@ function Home() {
   let content = null;
 
   if (products.error) {
-    content = <p>There was an error, please refresh or try again.</p>;
+    content = (
+      <p className="text-center">
+        There was an error, please refresh or try again.
+      </p>
+    );
   }
 
   if (products.loading) {

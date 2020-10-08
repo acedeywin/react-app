@@ -21,15 +21,18 @@
     "react-scripts": "3.4.3",
     "react-spring": "^8.0.27",
     "reactstrap": "^8.6.0",
+    "serve": "^11.3.2",
     "tailwindcss": "^1.7.6"
   },
   "scripts": {
     "build:css": "postcss src/index.css -o src/tailwind.css",
     "watch:css": "postcss src/index.css -o src/tailwind.css -w",
-    "start": "yarn build:css && react-scripts start",
+    "dev": "yarn build:css && react-scripts start",
+    "start": "serve -s build",
     "build": "yarn build:css && react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "yarn run build"
   },
   "eslintConfig": {
     "extends": "react-app"
